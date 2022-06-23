@@ -1,11 +1,13 @@
 import React from 'react';
-import MainCard from '@Components/Main/MainCard';
+import Carousel from '@Components/Common/Carousel';
+import { useCarouselMovieTitle } from '@Hooks/useMovieData';
+import { useCarouselTvTitle } from '@Hooks/useTvData';
+import { useParams } from 'react-router-dom';
 
 const MainPresenter = () => {
-    return (
-        <div>
-            <MainCard name={'범죄도시2'} />
-        </div>
-    );
+    const params = useParams();
+    const { data } = params.section === 'movie' ? useCarouselMovieTitle() : useCarouselTvTitle();
+
+    return <div>{data && data.map((d: any, index: number) => <Carousel title={d} index={index} key={index} genre={params.section || 'movie'} />)}</div>;
 };
 export default MainPresenter;

@@ -18,7 +18,7 @@ const App: React.FC = () => {
                     }
                 />
                 <Route
-                    path="/detail"
+                    path="/detail/:genre/:index/:code"
                     element={
                         <MainLayout>
                             <Detail />

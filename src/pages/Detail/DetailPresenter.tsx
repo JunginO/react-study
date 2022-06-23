@@ -1,6 +1,6 @@
 import React from 'react';
-
+import DetailTop from '@Components/Detail/DetailTop';
 const DetailPresenter = () => {
-    return <div>Detail!!!!!</div>;
+    return <DetailTop />;
 };
 export default DetailPresenter;
